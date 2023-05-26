@@ -1,0 +1,44 @@
+.select-component {
+    position: relative;
+}
+
+.select {
+    display: flex;
+    padding: 8px 16px;
+    border: 1px solid #000;
+    width: 280px;
+    cursor: pointer;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.select span {
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.options {
+    position: absolute;
+    width: 280px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+.options .option {
+    background: #fff;
+    padding: 4px 8px;
+    border: 1px solid #000;
+    border-bottom: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+}
+
+.options .option:last-child {
+    border-bottom: 1px solid #000;
+}
+
+.options .option:first-child {
+    border-top: none;
+}
