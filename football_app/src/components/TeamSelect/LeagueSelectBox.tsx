@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styles from './Select.module.css';
 
 interface Option1 {
-    leaguename: string
-    id?: BigInteger,
+    league: { id: number, name: string, type:string, logo:string}, 
+
   }
 
 interface SelectProps {
@@ -19,7 +19,7 @@ export const LeagueSelectBox: React.FC<SelectProps> = ({ placeholder, selected, 
     return (
         <div className={styles['select-component']}>
         <div onClick={() => setShowOptions(!showOptions)} className={styles['select']}>
-            <span>{selected ? selected.leaguename : placeholder}</span>
+            <span>{selected ? selected.league.name : placeholder}</span>
             <span>v</span>
         </div>
         {showOptions && (
@@ -28,8 +28,8 @@ export const LeagueSelectBox: React.FC<SelectProps> = ({ placeholder, selected, 
                 <div onClick={() => {
                     onChange(option);
                     setShowOptions(false);
-                }} key={option.leaguename} className={styles['option']} >
-                    <span>{option.leaguename}</span>
+                }} key={option.league.logo} className={styles['option']} >
+                    <span>{option.league.name}</span>
                 </div>
             ))}
         </div>

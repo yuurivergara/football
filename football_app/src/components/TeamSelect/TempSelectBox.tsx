@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import styles from './Select.module.css';
+import { key } from 'localforage';
 
-interface Option2 {
-    ano: string
-  }
+
+
 
 interface SelectProps {
     placeholder?: string;
-    temp: Option2[];
-    selected: Option2 | null;
-    onChange: (selection: Option2) => void;
+    temp: number[];
+    selected: number | null;
+    onChange: (selection: number) => void;
+    enable: string,
+    
 };
 
-export const TempSelectBox: React.FC<SelectProps> = ({ placeholder, selected, temp, onChange }) => {
+export const TempSelectBox: React.FC<SelectProps> = ({ placeholder, selected, temp, onChange,  enable}) => {
     const [showOptions, setShowOptions] = useState(false);
+    
 
     return (
-        <div className={styles['select-component']}>
+        <div className={styles['select-component']} style={{display:`${enable}`}}>
         <div onClick={() => setShowOptions(!showOptions)} className={styles['select']}>
-            <span>{selected ? selected.ano : placeholder}</span>
+            <span>{selected ? selected.toString(): placeholder}</span>
             <span>v</span>
         </div>
         {showOptions && (
@@ -27,8 +30,9 @@ export const TempSelectBox: React.FC<SelectProps> = ({ placeholder, selected, te
                 <div onClick={() => {
                     onChange(option);
                     setShowOptions(false);
-                }} key={option.ano} className={styles['option']} >
-                    <span>{option.ano}</span>
+                    
+                }} key={option} className={styles['option']} >
+                    <span>{option}</span>
                 </div>
             ))}
         </div>

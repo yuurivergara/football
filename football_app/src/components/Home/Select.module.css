@@ -20,6 +20,7 @@
 .options {
     position: absolute;
     width: 280px;
+    height: 50vh;
     overflow-x: hidden;
     overflow-y: scroll;
     background-color: #fff;
