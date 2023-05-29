@@ -4,6 +4,7 @@ import React, {useState,useEffect} from "react"
 import { LeagueSelectBox } from "./LeagueSelectBox"
 import { TempSelectBox } from "./TempSelectBox"
 import axios from "axios"
+import "./Select.module.css"
 
 interface Option1 {
     league: { id: number, name: string, type:string, logo:string}, 
@@ -16,21 +17,6 @@ interface times{
 
 export function TeamSelect(){
 
-    
-
-    const data = [2008,
-        2010,
-        2011,
-        2012,
-        2013,
-        2014,
-        2015,
-        2016,
-        2017,
-        2018,
-        2019,
-        2020
-                                                                                    ]
     
     
     
@@ -122,9 +108,9 @@ export function TeamSelect(){
                 /> 
                 </div> 
                 <div style={{display:"flex",padding:30, width:"100%",height:"100%", flexWrap:"wrap",justifyContent:"center"}}>
-                {selectedTemp}
                 {teams?.map((team)=>(
-                    <button onClick={()=> {
+                    <button className="button"
+                    onClick={()=> {
                         setTeamId(team.team.id.toString())
                         setTeamName(team.team.name)
                         navigation("/teampage")
@@ -138,7 +124,7 @@ export function TeamSelect(){
                 </div>
             </div>
             
-            <button style={{backgroundColor:"red", width:300, height:30, borderWidth:0,marginBottom:15}}>Alterar País</button>
+            <button style={{backgroundColor:"red", width:300, height:30, borderWidth:0,marginBottom:15}} className="button">Alterar País</button>
         </div>
     )
 }

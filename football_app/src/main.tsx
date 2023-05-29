@@ -9,10 +9,11 @@ import Login from './components/Login/Login.tsx';
 import Home from './components/Home/Home.tsx';
 import { UserContextProvider } from './Contexts/UserContext.tsx';
 import { TeamSelect } from './components/TeamSelect/TeamSelect.tsx';
-import {TeamPage} from './components/Team/TeamPage.tsx';
+import TeamPage from './components/Team/TeamPage.tsx';
+
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <Login />,
   },
   {

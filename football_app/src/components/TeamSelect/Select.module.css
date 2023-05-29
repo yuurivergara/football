@@ -19,10 +19,11 @@
 
 .options {
     position: absolute;
-    width: 280px;
+    width: 25vw;
     overflow-x: hidden;
     overflow-y: scroll;
     background-color: #fff;
+    height: 50vh;
 }
 
 .options .option {
@@ -41,4 +42,8 @@
 
 .options .option:first-child {
     border-top: none;
+}
+
+.buttonhover:hover{
+    cursor: pointer;
 }

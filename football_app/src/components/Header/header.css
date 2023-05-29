@@ -1,0 +1,17 @@
+.button {
+    background-color: #111;
+    border-width: 0;
+    color: azure;
+    margin-right: 50px;
+}
+
+.button:hover{
+    
+    color: aqua;
+    cursor: pointer;
+    
+}
+
+.title:hover{
+    cursor: pointer;
+}
