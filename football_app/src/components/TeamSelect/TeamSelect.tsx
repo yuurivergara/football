@@ -61,13 +61,12 @@ export function TeamSelect(){
     
     
     
-    const [css, setCss] = useState<string>("100vh")
     const [enable, setEnable] = useState<string>("none")
     const [selectedItem, setSelectedItem] = useState<Option1 | null>(null);
     const [selectedTemp, setSelectedTemp] = useState<number | null>(null);
 
     return(
-        <div style={{flex:1, display:"flex",backgroundColor:"#111", width:"100%",height:`${css}`, alignItems:"center",justifyContent:"center", flexDirection:"column"}}>
+        <div style={{flex:1, display:"flex",backgroundColor:"#111", width:"100%",height:`100vh`, alignItems:"center",justifyContent:"center", flexDirection:"column"}}>
             <div onClick={()=> navigation("/home")} style={{color: "azure", marginBottom:20,marginTop:20, fontFamily:"sans-serif", fontSize:40}}>FOOTBALL STATS</div>
             <div style={{flex:1, display:"flex",flexDirection:"column",justifyContent:"space-around",width:"100%", alignItems:"center"}}>
             <div style={{display:"flex"}}>
@@ -100,7 +99,6 @@ export function TeamSelect(){
                      }
                  })
                  .then(response => {
-                    setCss("100%")
                      setTeams(response.data.response)
                  }).catch(error => {console.log(error)})
  
