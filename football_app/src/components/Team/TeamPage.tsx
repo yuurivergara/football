@@ -166,7 +166,7 @@ export default function TeamPage(){
                             )
                         }
 
-{
+                        {
                             goal["0-15"].total != null && (
                                 <PieChart width={600} height={400}>
                                 <Pie
@@ -181,7 +181,7 @@ export default function TeamPage(){
                                     dataKey="value"
                             onMouseEnter={onPieEnter}
                           />
-                        </PieChart>
+                            </PieChart>
                             )
                         }
                     
