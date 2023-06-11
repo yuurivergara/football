@@ -10,9 +10,9 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 Instalar o gerenciador de pacotes NPM
 
-```
-[NPM download](https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi)
-```
+
+* [NPM download](https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi)
+
 
 ### 🔧 Instalação
 
