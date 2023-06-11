@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './Select.module.css';
-import { key } from 'localforage';
 
 
 
