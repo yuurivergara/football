@@ -1,6 +1,6 @@
 import "./styles.css";
 
-import { PieChart, Pie, Sector } from "recharts";
+import { Sector } from "recharts";
 
 
 
@@ -17,7 +17,6 @@ export const renderActiveShape =(props: any) => {
     fill,
     payload,
     percent,
-    total
   } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
