@@ -20,7 +20,7 @@ export function TeamSelect(){
     
     
     
-    const {country,token, setTeamId, setTeamName,setLeagueId, leagueId, setSeason} = React.useContext(UserContext);
+    const {country,token, setTeamId, setTeamName,setLeagueId, leagueId, setSeason,setCountry} = React.useContext(UserContext);
     const navigation = useNavigate()
     const [options, setOptions] = useState<Option1[]>([]) 
     const [teams, setTeams] = useState<times[]>() 
@@ -122,7 +122,11 @@ export function TeamSelect(){
                 </div>
             </div>
             
-            <button style={{backgroundColor:"red", width:300, height:30, borderWidth:0,marginBottom:15}} className="button">Alterar País</button>
+            <button onClick={()=> {
+                navigation("/home")
+                setCountry("")
+            }}
+            style={{backgroundColor:"red", width:300, height:30, borderWidth:0,marginBottom:15}} className="button">Alterar País</button>
         </div>
     )
 }
