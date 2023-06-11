@@ -104,13 +104,13 @@ export default function TeamPage(){
     if (info != null && players != null && newarray != null && lineups != null){
         if(info[0].team == undefined || players[0]== null){
             return(
-                <div style={{flex:1 ,height:"100vh",alignItems:"center",justifyContent:"center", display:"flex", backgroundColor:"#111"}}>
+                <div style={{flex:1 ,height:"100vh",alignItems:"center",justifyContent:"center", display:"flex", backgroundColor:"#111",flexDirection:"column"}}>
                     <text style={{fontSize:30,color:"azure"}}>INFORMAÇÕES NÃO DISPONIVEIS</text>
                     <button onClick={()=> {
                     navigation("/home")
                 
                     }}
-                    style={{backgroundColor:"red", width:400, height:50, borderWidth:0,marginBottom:15}}>
+                    style={{marginTop:30,backgroundColor:"red", width:400, height:50, borderWidth:0,marginBottom:15}}>
                         VOLTAR
                     </button>
                 </div>
