@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback } from "react"
 import { PieChart, Pie } from "recharts";
 import { renderActiveShape } from "../../assets/chart/data";
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 import { Header } from "../Header/Header";
 
 
@@ -15,6 +16,7 @@ interface Player {
 }
 
 export default function TeamPage(){
+    const navigation = useNavigate()
     const {teamId,leagueId,token, season} = React.useContext(UserContext)
     const [info, setInfo] = useState<Info[] | null>(null)
     const [newarray,setNewArray]= useState<any[] | null>(null)
@@ -102,8 +104,15 @@ export default function TeamPage(){
     if (info != null && players != null && newarray != null && lineups != null){
         if(info[0].team == undefined || players[0]== null){
             return(
-                <div style={{flex:1 ,alignItems:"center",justifyContent:"center", display:"flex", backgroundColor:"#111"}}>
-                    <text style={{fontSize:30}}>INFORMAÇÕES NÃO DISPONIVEIS</text>
+                <div style={{flex:1 ,height:"100vh",alignItems:"center",justifyContent:"center", display:"flex", backgroundColor:"#111"}}>
+                    <text style={{fontSize:30,color:"azure"}}>INFORMAÇÕES NÃO DISPONIVEIS</text>
+                    <button onClick={()=> {
+                    navigation("/home")
+                
+                    }}
+                    style={{backgroundColor:"red", width:400, height:50, borderWidth:0,marginBottom:15}}>
+                        VOLTAR
+                    </button>
                 </div>
             )
         }else{
