@@ -160,21 +160,31 @@ export default function TeamPage(){
                 <div style={{display:"flex",alignItems:"center", flexDirection:"column", justifyContent:"center", flex:1}}>
                     <text style={{color:"#111", fontSize:24}}>Gols marcados por tempo de jogo</text>
                     
-        
-                    <PieChart width={600} height={400}>
-                    <Pie
-                     activeIndex={activeIndex}
-                     activeShape={renderActiveShape}
-                     data={newarray}
-                        cx={300}
-                     cy={200}
-                     innerRadius={60}
-                     outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                onMouseEnter={onPieEnter}
-              />
-            </PieChart>
+                        {
+                            goal["0-15"].total == null && (
+                                <text style={{fontSize:18}}>Informações indisponiveis</text>
+                            )
+                        }
+
+{
+                            goal["0-15"].total != null && (
+                                <PieChart width={600} height={400}>
+                                <Pie
+                                 activeIndex={activeIndex}
+                                 activeShape={renderActiveShape}
+                                 data={newarray}
+                                    cx={300}
+                                 cy={200}
+                                 innerRadius={60}
+                                 outerRadius={80}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                            onMouseEnter={onPieEnter}
+                          />
+                        </PieChart>
+                            )
+                        }
+                    
                         
                    
                 </div>
